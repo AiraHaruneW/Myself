@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aira - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="hamburger.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#home" class="logo"> 花</a>
+
+      
+      <ul class="navbar">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      
+        
+        <div class="top-btn">
+          <a href="#contact" class="nav-btn">Contact Me</a>
+        </div>
+        <div class="hamburger-wrapper">
+            <div class="mobile-nav">
+              <label class="hamburger-menu">
+                <input type="checkbox" id="hamburger-toggle" />
+              </label>
+              <aside class="sidebar">
+                <nav class="mob-ham">
+                  <div><a href="#home" class="text">Home</a></div>
+                  <div><a href="#about"class="text">About</a></div>
+                  <div><a href="#portfolio"class="text">Portfolio</a></div>
+                  <div><a href="#contact"class="text">Contact</a></div>
+                </nav>
+              </aside>
+            </div>
+            <div class="overlay" id="overlay"></div>
+          </div>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-content">
+        <h3>Hi, Myself</h3>
+        <h1>Aira</h1>
+        <h3>I'm a <span class="multiple-text"></span></h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+          consequatur est neque, vel, laboriosam accusantium.
+        </p>
+        <div class="social-media">
+          <a href="#"><i class="bx bxl-linkedin"></i></a>
+          <a href="#"><i class="bx bxl-github"></i></a>
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-instagram"></i></a>
+        </div>
+        <a href="#" class="btn">Download CV</a>
+      </div>
+      <div class="home-img">
+        <img src="assets/giphy.gif" alt="Profile Image" />
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="assets/giphy.gif" alt="About Image" />
+      </div>
+      <div class="about-content">
+        <h2>About <span>Me</span></h2>
+        <h3>I'm a <span>UI/UX Designer</span></h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+          laboriosam nulla aut cum, commodi fugit.
+        </p>
+        <a href="#" class="btn">Read More</a>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <h2>My <span>Portfolio</span></h2>
+      <div class="portfolio-content">
+        <div class="row">
+          <img src="" alt="Project 1" />
+          <div class="main-row">
+            <div class="row-text"><h5>Website Design</h5></div>
+            <div class="row-icon"><i class="bx bxl-github"></i></div>
+          </div>
+          <h4>Website Development</h4>
+        </div>
+        <div class="row">
+          <img src="assets/2.jpg" alt="Project 2" />
+          <div class="main-row">
+            <div class="row-text"><h5>Website Design</h5></div>
+            <div class="row-icon"><i class="bx bxl-github"></i></div>
+          </div>
+          <h4>Website Development</h4>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact <span>Me</span></h2>
+      <form action="https://formcarry.com/s/_kquVDf4bMc" method="POST">
+        <div class="input-box">
+          <input type="text" placeholder="Full Name" name="name" required />
+          <input type="email" placeholder="Email Address" name="email" required />
+        </div>
+        <div class="input-box">
+          <input type="tel" name="Phone" placeholder="Phone Number" inputmode="numeric" pattern="[0-9]*"/>
+          <input type="text" placeholder="Subject" name="Subject" />
+        </div>
+        <textarea
+          cols="30"
+          rows="10"
+          placeholder="Your Message"
+          required
+          name="message"
+        ></textarea>
+        <input type="submit" value="Send Message" class="btn" />
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div class="social">
+        <a href="#"><i class="bx bxl-linkedin"></i></a>
+        <a href="#"><i class="bx bxl-github"></i></a>
+        <a href="#"><i class="bx bxl-facebook"></i></a>
+        <a href="#"><i class="bx bxl-instagram"></i></a>
+      </div>
+      <p>&copy; Aira | All Rights Reserved</p>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
