@@ -1,0 +1,196 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fdfdfd;
+  color: #34495E; /* Soft Charcoal */
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bar-width: 40px;
+  --bar-height: 6px;
+  --hamburger-gap: 5px;
+  --foreground: #8E1C25; /* Deep Burgundy */
+  --background: white;
+  --hamburger-margin: 10px;
+  --animation-timing: 200ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+  --sidebar-item-padding: 1rem;
+  --sidebar-item-font-size: 1.2rem;
+  --sidebar-item-margin: 1.2rem 0;
+
+  /* Psychology-based color palette */
+  --trust-blue: #2C3E50; /* Midnight Blue */
+  --calm-grey: #ECF0F1;  /* Muted Ivory */
+  --energy-red: #8E1C25; /* Deep Burgundy */
+  --creativity-gold: #F1C40F; /* Rich Gold */
+  --focus-slate: #3B4A6B; /* Dark Slate */
+}
+
+/* ================= HAMBURGER WRAPPER ================= */
+
+.hamburger-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1002;
+  display: none; /* Show only on small screens */
+}
+
+@media (max-width: 768px) {
+  .hamburger-wrapper {
+    display: block;
+  }
+}
+
+/* ================= HAMBURGER MENU ================= */
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+  position: relative;
+  top: var(--hamburger-margin);
+  right: var(--hamburger-margin);
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.hamburger-menu:has(input:checked) {
+  --foreground: white;
+  --background: #34495E; /* Soft Charcoal */
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+  border: 1px solid var(--background);
+  box-shadow: 0 0 0 1px var(--foreground);
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--foreground);
+  border-radius: 9999px;
+  transform-origin: right center;
+  transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing), translate var(--animation-timing),
+    background-color var(--animation-timing);
+}
+
+/* Hide the middle bar */
+.hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+  transition: translate var(--animation-timing);
+  translate: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem 1rem;
+  padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
+  background-color: var(--foreground); /* Deep Burgundy */
+  color: var(--background);
+  max-width: 10rem;
+  min-height: 100vh;
+  z-index: 1001;
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
+  translate: 0;
+}
+
+/* ================= SIDEBAR ITEMS ================= */
+
+.sidebar a {
+  display: block;
+  padding: var(--sidebar-item-padding);
+  font-size: var(--sidebar-item-font-size);
+  margin: var(--sidebar-item-margin);
+  color: var(--background);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebar a:hover {
+  color: var(--creativity-gold); /* Rich Gold */
+}
+
+/* ================= OVERLAY (BLUR BACKGROUND) ================= */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease-in-out;
+}
+
+.mobile-nav:has(input:checked) ~ .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ================= MOBILE FIXES ================= */
+
+@media (max-width: 768px) {
+  .top-btn {
+    margin-right: 60px; /* Space between Contact Me and hamburger */
+  }
+}
+
+.mob-ham {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: .8rem; /* Vertical space between each div */
+ /* Optional: space inside the nav */
+}
+
+.mob-ham .text {
+  font-size: 1rem; /* Optional: make text bigger */
+  text-decoration: none; /* Remove underline */
+  color: #fff; /* Set your preferred text color */
+  font-weight: bolder;
+}
