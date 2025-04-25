@@ -1,0 +1,353 @@
+/* Elegant Portfolio Styles - with Psychology-Based Color Palette */
+
+:root {
+    --primary-color: #2C3E50;
+    --accent-color: #8E1C25;
+    --highlight-color: #F1C40F;
+    --background-color: #ECF0F1;
+    --text-color: #34495E;
+    --hover-color: #3B4A6B;
+    --success-color: #A3B18A;
+    --alert-color: #D96C4F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 10%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.navbar {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar li a {
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.hover-enabled .navbar li a:hover {
+    color: var(--highlight-color);
+}
+
+.top-btn .nav-btn {
+    background: var(--accent-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+    transition: 0.3s;
+}
+
+.hover-enabled .top-btn .nav-btn:hover {
+    background: var(--hover-color);
+}
+
+/* Sections */
+section {
+    padding: 100px 10%;
+    scroll-margin-top: 50px;
+    margin-bottom: 100px;
+    min-height: 100vh;
+}
+
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    min-height: 100vh;
+}
+
+.home-content {
+    flex: 1;
+    text-align: left;
+}
+
+.home-content h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.home-content h3 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.home-content p {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.social-media a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: var(--accent-color);
+    transition: 0.3s;
+}
+
+.hover-enabled .social-media a:hover {
+    color: var(--primary-color);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.hover-enabled .btn:hover {
+    background: var(--hover-color);
+}
+
+.home-img img,
+.about-img img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 20px;
+}
+
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 80px;
+    margin-top: 60px;
+}
+
+.about-content h2 {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.about-content p {
+    margin: 15px 0;
+    line-height: 1.8;
+    text-align: left;
+    max-width: 600px;
+    color: var(--text-color);
+}
+
+.about-img img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 20px;
+}
+
+.about-content {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    margin-top: 80px;
+}
+
+.portfolio h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.row {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.row img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.main-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.main-row h5 {
+    font-size: 1rem;
+}
+
+/* Contact Section */
+.contact {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 80px;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.input-box input,
+textarea {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Footer Section */
+.footer {
+    padding: 30px 10%;
+    background: var(--background-color);
+    text-align: center;
+}
+
+.footer .social a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.footer p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 80px;
+        right: 10%;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .home {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-img {
+        order: -1;
+        width: 80%;
+        max-width: 250px;
+        margin-bottom: 20px;
+    }
+
+    .home-content {
+        text-align: center;
+    }
+
+    .about {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding-top: 40px;
+    }
+
+    .about-content h2,
+    .portfolio h2,
+    .contact h2 {
+        font-size: 2.4rem;
+    }
+
+    .about-img img {
+        max-width: 100%;
+    }
+}
+
+/* Accessibility: Remove focus outline */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: none;
+}
